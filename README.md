@@ -1,16 +1,8 @@
-# e_mercado
+# E-MERCADO
 
-Migration from web to mobile plataforms of my Uruguaian e-commerce.
+Migration from web to mobile platforms of my Uruguayan e-commerce.
+In this project I'm using Flutter + Dart.
+My intention with this project is to create an app with a similar UI to that of my web
+e-commerce (https://macielfede.github.io/E-MERCADO/),
+also learn and introduce myself to mobile development with Flutter.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
