@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'E-MERCADO',
       home: const MyHomePage(),
     );
   }
@@ -50,7 +50,105 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           backgroundColor: Colors.black,
           title: const Text('Inicio'),
-        ));
+        ),
+        body: Center(
+          //Center is a widget that centers its child within itself.
+            child: ListView(
+              //The use of a ListView() widget gives us the option of putting more widgets than the screen can display at once.
+              children: <Widget>[
+                //I use children: <Widget> because the IDE can know the list type and if I add anything except Widget
+                //the IDE will throw an error before building the application
+                Container(
+                  //I use a lot of Containers because they are the widget that more easily lets me work with padding
+                  padding: EdgeInsets.only(bottom: 10),
+                  child: Image.asset('img/cover_back.png', fit: BoxFit.fitWidth)
+                    //BoxFit.fitWidth adjust the image width to the one of its father
+                ),
+                Card(
+                  semanticContainer: true,
+                  //This displays all the children on the card as 1 Widget
+                  shape: BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(2))),
+                  color: Colors.white,
+                  shadowColor: Colors.black,
+                  child: InkWell(
+                    onTap: null,//Should navigate to the cars category
+                    child: Column(
+                      children: <Widget>[
+                        Image.asset('img/cars_index.jpg'),
+                        Container(
+                          padding: EdgeInsets.only(top: 3, left: 8),
+                          alignment: Alignment.centerLeft,
+                          child: Text('Autos', style: TextStyle(fontSize: 20)),
+                        ),
+                        Container(
+                            padding: EdgeInsets.only(top: 3, left: 8),
+                            alignment: Alignment.centerLeft,
+                            child: Text('Los mejores precios en autos 0 kilómetro, de alta y media gama.',
+                                style: TextStyle(fontSize: 15), textAlign: TextAlign.left)
+                        ),
+                        SizedBox(height: 10,)
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10),
+                Card(semanticContainer: true,
+                  shape: BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(2))),
+                  color: Colors.white,
+                  shadowColor: Colors.black,
+                  child: InkWell(
+                    onTap: null,//Should navigate to the cars category
+                    child: Column(
+                      children: <Widget>[
+                        Image.asset('img/toys_index.jpg'),
+                        Container(
+                          padding: EdgeInsets.only(top: 3, left: 8),
+                          alignment: Alignment.centerLeft,
+                          child: Text('Juguetes', style: TextStyle(fontSize: 20)),
+                        ),
+                        Container(
+                            padding: EdgeInsets.only(top: 3, left: 8),
+                            alignment: Alignment.centerLeft,
+                            child: Text('Encuentra aqui los mejores precios para niños/as de cualquier edad.',
+                                style: TextStyle(fontSize: 15), textAlign: TextAlign.left)
+                        ),
+                        SizedBox(height: 10)
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10),
+                Card(semanticContainer: true,
+                  shape: BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(2))),
+                  color: Colors.white,
+                  shadowColor: Colors.black,
+                  child: InkWell(
+                    onTap: null,//Should navigate to the cars category
+                    child: Column(
+                      children: <Widget>[
+                        Image.asset('img/furniture_index.jpg'),
+                        Container(
+                          padding: EdgeInsets.only(top: 3, left: 8),
+                          alignment: Alignment.centerLeft,
+                          child: Text('Muebles', style: TextStyle(fontSize: 20)),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(top: 3, left: 8),
+                          alignment: Alignment.centerLeft,
+                          child: Text('Muebles antiguos, nuevos y para armar uno mismo.',
+                              style: TextStyle(fontSize: 15), textAlign: TextAlign.left)
+                        ),
+                        SizedBox(height: 10)
+                      ],
+                    ),
+                  ),
+                ),
+                TextButton(onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const MyCategoriesPage()));
+                  }, child: Text('Y mucho más!', style: TextStyle(color: Colors.black)))
+          ],
+        )));
   }
 }
 
@@ -115,7 +213,8 @@ class NavigationDrawer extends StatelessWidget {
   Widget build(BuildContext context) => Drawer(
         child: SingleChildScrollView(
           //This widget is useful when you have a single box that will normally be entirely visible,
-          // for example a clock face in a time picker, but you need to make sure it can be scrolled if the container gets too small in one axis (the scroll direction).
+          // for example a clock face in a time picker, but you need to make sure it can be scrolled if
+          // the container gets too small in one axis (the scroll direction).
           child: Column(
             //Column is a widget that displays its children in a vertical array.
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -138,8 +237,9 @@ class NavigationDrawer extends StatelessWidget {
                   top: 24 + MediaQuery.of(context).padding.top, bottom: 24),
               child: Column(children: const [
                 CircleAvatar(
-                  radius: 32,
-                  //backgroundImage: NetworkImage(),
+                  radius: 52,
+                  //AssetImage() is used to select a local image
+                  foregroundImage: AssetImage('img/img_perfil.png'),
                 ),
                 SizedBox(
                   height: 10,
