@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'categoriesPage.dart';
+import 'sellPage.dart';
+import 'cartPage.dart';
+import 'myUserPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -71,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.white,
                   shadowColor: Colors.black,
                   child: InkWell(
-                    onTap: null,//Should navigate to the cars category
+                    onTap: null,///Should navigate to the cars category
                     child: Column(
                       children: <Widget>[
                         Image.asset('img/cars_index.jpg'),
@@ -150,60 +154,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         )));
   }
-}
-
-class MyCategoriesPage extends StatelessWidget {
-  //Categories page. Displays all the categories available
-  const MyCategoriesPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) => Scaffold(
-      drawer: NavigationDrawer(),
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: const Text('Categorias'),
-      ));
-}
-
-class MySellPage extends StatelessWidget {
-  //Sell page. Displays a form to post a product
-  const MySellPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) => Scaffold(
-      drawer: NavigationDrawer(),
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: const Text('Vender'),
-      ));
-}
-
-class MyCartPage extends StatelessWidget {
-  //Displays all the products on the user cart
-  const MyCartPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) => Scaffold(
-      drawer: NavigationDrawer(),
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: const Text('Mi carrito'),
-      ));
-}
-
-class MyUserPage extends StatelessWidget {
-  //Displays the user information
-  const MyUserPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) => Scaffold(
-      drawer: NavigationDrawer(),
-      //drawer is the hamburguer menu at the top of the app
-      appBar: AppBar(
-        //appBar is the bar on top of the app, contains a title and the drawer
-        backgroundColor: Colors.black,
-        title: const Text('Mi perfil'),
-      ));
 }
 
 class NavigationDrawer extends StatelessWidget {

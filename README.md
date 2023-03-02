@@ -6,3 +6,7 @@ My intention with this project is to create an app with a similar UI to that of 
 e-commerce (https://macielfede.github.io/E-MERCADO/),
 also learn and introduce myself to mobile development with Flutter.
 
+Things I learned so far:
+- 
+- How to work with local assets like images (IDE, not in app).
+- Creating forms and real time validation. 
